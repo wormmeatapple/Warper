@@ -2,7 +2,7 @@
 
 <p>First things first is to start researching. My research into circuit bending led to an answer I really didn't like, no one knows how to predict it. You just mix, modify and disrupt data signals in the hopes it makes something cool. This is not ideal but it is fineee, because I know (slightly) how a camera sensor works.</p>
 
-<p>A camera sensor (at least the one I plan to use, a CCD) is really just an array of photodiodes that all output a little voltage depending on how much light they received. This voltage is moved into a buffer and then moved into a seperate buffer that handles one pixel at a time. That little pixel is amplified, and then processed into digital format and displayed. All of this is handled by little signal pulses, and my thinking is that if I can incorporate pentiometers with tiny ranges in resistance I can mess up some of the thinking and boom, bends formed. I'll also add ways to short two data lines together, just for the fun of it.</p>
+<p>A camera sensor (at least the one I plan to use, a CCD(charged coupling device)) is really just an array of photodiodes that all output a little voltage depending on how much light they received. This voltage is moved into a buffer and then moved into a seperate buffer that handles one pixel at a time. That little pixel is amplified, and then processed into digital format and displayed. All of this is handled by little signal pulses, and my thinking is that if I can incorporate pentiometers with tiny ranges in resistance I can mess up some of the thinking and boom, bends formed. I'll also add ways to short two data lines together, just for the fun of it.</p>
 
 ![image](https://github.com/user-attachments/assets/f9f5dbdd-8a70-4140-9766-6c44d5743d8e)
 
@@ -58,4 +58,51 @@
 > - I swear this isn't inflated
 > - Tommorow I should be ready to wire up a ton of parts
 > - Still very much research stage
+
+## June 2nd
+
+<p>Okay time to wire things up. I'm hoping today I have at least the vertical clock signals all sorted.</p>
+
+<p>I lied I'm doing the substrate clock it's way easier. I just need to boost the voltage from the batteries I'll use (probably 3.3V lipos) into 15V.</p>
+
+<p>I'm also gonna use an IC called CXD3400 cause it handles regulating the voltage for the vertical clocks.</p>
+
+![image](https://github.com/user-attachments/assets/fd19f545-f74b-4b77-9af7-b7b09c95ff25)
+
+<p>Input and output pins on this messy circuit diagram.</p>
+
+![image](https://github.com/user-attachments/assets/a36057cf-3f10-4f07-858e-30112cd54623)
+
+<p>That took WAY too long, but that should be all good for the SUB clock.</p>
+
+<p>Now I need negative voltage for the vertical clocks, so I'll use a charge pump. I choose a LMC7660 because apparently they're low noise and won't interfere with the image sensor. (who am I kidding it was the first thing that came up when I searched for charge pump)</p>
+
+![image](https://github.com/user-attachments/assets/5e0438ee-42b8-4440-ad2e-6a2b46914bdc)
+
+<p>Super easy. I might add a small transistor inbetween the battery and, well everything, so that I can limit power drain to ONLY when the MCU says to go go go. Oh I forgot to mention that I'm using the raspberry pi pico as my controller. It has all the gpio pins I could ever need, and it has the ability to produce the timing frequencies needed with relative ease! Plus I can change the firmware with a usb-c cable which is so much easier than using JTAG or something of the like.</p>
+
+<p>Okay! Now all I have to do is tie in some outputs and fan others and the sensor should have vertical clock signals</p>
+
+![image](https://github.com/user-attachments/assets/9ed15392-95a2-4893-b320-5c3996c3bdee)
+
+<p>So the CXD3400 has 6 clock outputs, while the ICX238Al only uses 5... This is cause the CXD is designed to be used with like any CCD image sensor. This is fine, I just have to tie in the V1A and V1B inputs together to form one V1, and the same for V1A and V1B. I've added a tiny little resistor just as like short prevention, if anyone thinks that's unnecassary tell me but it doesn't hurt. Now the V2 output is a little more complex and annoying. It fans out fine, wiring to both V2 inputs, but I'm ninety percent sure that I'll have to split it into a 2phase signal in code later on.</p>
+
+<p>Also side note, this schematic is so hard to read. If I redid this I'd probably organise it differently but sunk cost phallacy and all.</p>
+
+![image](https://github.com/user-attachments/assets/dd1ef849-3967-4c12-af76-5da4f79ba70c)
+
+<p>Way easier, wiring up all the timing inputs. I'm planning on using PIO in the pico for the timing of... well everything. It can produce signals as fast as the cpu runs (I'm pretty sure, don't quote me on that) and so it can easily handle the timing of the vertical registers and the substrate clear.</p>
+
+<p>Honestly, I think the hardest bit is done now. Both the reset gate clock and the horizontal register clocks can be run on 3.3V, which is what the pico can supply! However I have a bio exam tomorow, and it's time to sleep. Here's what the schematic looks like currently.</p>
+
+![image](https://github.com/user-attachments/assets/d7108a26-c5b8-4392-96a9-f75505e162ba)
+
+
+> Time taken: **2h 52m**
+> - Provided power rails for SUBφ and Vφ
+> - Connected driver IC to inputs of sensor
+> - Deciphered ancient texts (datasheets)
+> - Attached PIO outputs to pulse inputs of driver IC
+
+
 
