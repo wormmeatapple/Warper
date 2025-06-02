@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/56f343f7-dc10-4703-97e1-2791a81e0c27)## May 30th
+## May 30th
 
 <p>First things first is to start researching. My research into circuit bending led to an answer I really didn't like, no one knows how to predict it. You just mix, modify and disrupt data signals in the hopes it makes something cool. This is not ideal but it is fineee, because I know (slightly) how a camera sensor works.</p>
 
@@ -69,7 +69,7 @@
 
 ![image](https://github.com/user-attachments/assets/fd19f545-f74b-4b77-9af7-b7b09c95ff25)
 
-<p>Input and output pins on this messy circuit diagram.</p>
+<p>Input and output pins for the SUB power on this messy circuit diagram.</p>
 
 ![image](https://github.com/user-attachments/assets/a36057cf-3f10-4f07-858e-30112cd54623)
 
@@ -104,5 +104,6 @@
 > - Deciphered ancient texts (datasheets)
 > - Attached PIO outputs to pulse inputs of driver IC
 
+<p>I was reading over this after I commited my journal change when I realised this sensor is made for black and white cameras. Probably the biggest bruh I've ever let out. Tomorow I'll research if I can swap this out easily for a colour sensor. If not I have to do some weird programming stuff but I really would rather not for two reasons. 1. Adds longer to this project which has already consumed so much of my time just to reading datasheets 2. It would make the whole circuit bending part of this camera (which I haven't even TOUCHED on) a whole lot worse. I'll explain in the morning but for now. Bruh.</p>
 
 
