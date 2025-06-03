@@ -106,4 +106,18 @@
 
 <p>I was reading over this after I commited my journal change when I realised this sensor is made for black and white cameras. Probably the biggest bruh I've ever let out. Tomorow I'll research if I can swap this out easily for a colour sensor. If not I have to do some weird programming stuff but I really would rather not for two reasons. 1. Adds longer to this project which has already consumed so much of my time just to reading datasheets 2. It would make the whole circuit bending part of this camera (which I haven't even TOUCHED on) a whole lot worse. I'll explain in the morning but for now. Bruh.</p>
 
+## June 3rd
+
+<p>Sigh. Bruh. I was thinking about my software solution to it being a black and white camera, but I realised even then I'd need to change some parts of the hardware in a way that I can't really do. So, I'm gonna try and find a colour sensor that runs on the same wiring.</p>
+
+<p>I've found something similar, it's an ICX453AQ, and it has no public datasheet. This is probably the worst mistake I coulda made. There is a project called the Cam84, which is an astrophotography camera that uses the same sensor, but that's about all the infomation I have on this thing.</p>
+
+<p>ICX285AQ!! It's the exact same sensor but colour! It's also only found in THOUSAND DOLLAR CAMERAS! When I was researching how I would get the sensor, I must have mistook the ICX453 for the ICX285, because the 452 can be found in 70 dollar cameras. I will still try and find a similar sensor so I dont have to change much, but if I can't we're gonna have to use the 453.</p>
+
+<p>Whelp. All similar sensors are only used in industrial solutions. We've gotta use the 453.</p>
+
+<p>**ICX453AQ PINOUT WOULD GO HERE BUT PHOTOS ARE BROKEN**</p>
+
+
+
 
