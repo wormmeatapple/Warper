@@ -116,7 +116,26 @@
 
 <p>Whelp. All similar sensors are only used in industrial solutions. We've gotta use the 453.</p>
 
-<p>**ICX453AQ PINOUT WOULD GO HERE BUT PHOTOS ARE BROKEN**</p>
+![image](https://github.com/wormmeatapple/Warper/blob/main/assets/ICX453AQ.png)
+
+<p>This looks way more complex, but actually it's nearly the same. The vertical registers are now no longer split into 2 phases, instead the horizontal registers are split into 4 phases. It's easier if I show the pins like this.</p>
+
+![image](https://github.com/user-attachments/assets/42f5675c-0471-4238-9a56-48738e3d3142)
+
+<p>These photos are from this website, http://astroccd.org/2015/04/cam84/, and detail a PCB that uses the sensor as an astronomy camera. I want mine to be handheld, but the diagram is a good reference. I do need to remake the footprint and symbol which is slightly annoying.</p>
+
+<p>They also use a different vertical driver, which is wayyy better it comes with a charge pump to produce voltages for the SUB clock. I'm lowkey gonna scrap my current PCB, and remake everything. It shouldn't take long with my new knowledge and awsomeness.</p>
+
+<p>Okay, I'm remaking the schematic from scratch.</p>
+
+<p>I found the CXD1267AN on snapeda! This should make it way easier!</p>
+
+<p>Yeah I don't know why I thought that'd be easy. Kicad is genuinely the stupidest software I've ever used. I think I'd rather just make it by hand.</p>
+
+<p>Oh phew I finally got it to work, that was driving me nuts it kept giving no permission errors when I'm literally the admin.</p>
+
+<p>I stayed up too late and didn't write any journal entries, I'll fix it up tomorow.</p>
+
 
 
 
