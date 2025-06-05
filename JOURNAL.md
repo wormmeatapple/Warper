@@ -136,6 +136,52 @@
 
 <p>I stayed up too late and didn't write any journal entries, I'll fix it up tomorow.</p>
 
+> Time taken: **3h**
+> - I probably won't count this, it was alot of reading and searching through data
+
+## June 4th
+
+<p>Okay so I have a dilemma. The 453 sensor is awesome, 2 million pixels awesome. It's used in astronomy cameras and handheld DSLRs, but it doesn't have a datasheet and the only information I have on it is from a reverse engineered kiev astronomy camera. There is another sensor, the 415. It has a datsheet, a symbol already in Kicad, I can drive it exactly how it was meant to be driven. But it only has 490k pixels. It's used in security cameras, like cmon. <br> A sane person would choose the easy sensor, make a camera that works and be done with it, but this whole event is to make things that are out of your comfort zone. So I'm gonna use the hard sensor.</p>
+
+![image](https://github.com/user-attachments/assets/e5249594-2f3c-4d79-9c4e-9c07df98b123)
+
+<p>I've learnt what labels are some I'm gonna space this out and make it look clean and nice.</p>
+
+<br>
+
+<p>Okay, I'll wire up the CXD first. I'm using a CXD1267AN, as it has a charge pump inside it to produce the high voltages needed for the SUB clock. I needa supply it with around -7.4V, +5V and +15V. Here's the circuitry I'm using to get these power rails.</p>
+
+![image](https://github.com/user-attachments/assets/cecdb2e8-45ba-4349-82fe-89d6202d507a)
+
+<p>(I haven't added the +15V boost converter yet cause I'm still tryna find one I like.)</p>
+
+<p>Then I just needa wire up the CXD according to the datasheet. While I'm at it I'll wire out the timing from my pico.</p>
+
+![image](https://github.com/user-attachments/assets/6d299d68-67fe-46cd-8b5b-fd0d64e570bc)
+
+<p>Looks pretty good! I have everything bunched together so it's easier to read on the photo, but I'll seperate them once I keep working on the schematic.</p>
+
+<p>Now for the horizontal registers. Again, I have no idea what the actual desired voltage of this thing is, but the Kiev guy uses 6V, so I'll use 6V.</p>
+
+![image](https://github.com/user-attachments/assets/496854dc-7f52-467d-9463-545fbf85cb11)
+
+<p>Super easy, just had to do some tiny calculations to figure out the resistor values. The +6Vs gets wired into some dual mosfet driver, this boosts the 3.3V signal from pico into 6V signals, I'll wire that up now.</p>
+
+<p>The wiring example for the sensor uses a MAX4428 as it's dual mos-driver, but this driver has one inverted output and one regular? I'm not exactly sure why this is needed, but since I don't have the datasheet I really can't check the waveforms needed so I just have to believe in the process. Kicad doesn't have the MAX, but it does have a MIC4428, which has the same amperage, bipolar inversion and mosfet driver nature.</p>
+
+![image](https://github.com/user-attachments/assets/d5e588cb-9bf9-4f97-877a-449c6dd390cf)
+
+<p>H1timing and H2timing just come from another GPIO pin on the pico, and H1 and H2 wire to the sensor like so.</p>
+
+![image](https://github.com/user-attachments/assets/74dbfe95-983a-4cc3-9444-a117ef92d23a)
+
+<p>Okay seems good for today.</p>
+
+> Time taken: **2h**
+> - Whole bunch of wiring
+> - Much easier now that I know what I'm doing
+
+
 
 
 
