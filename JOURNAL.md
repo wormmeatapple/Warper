@@ -181,6 +181,21 @@
 > - Whole bunch of wiring
 > - Much easier now that I know what I'm doing
 
+## June 8th
+
+<p>I'm gonna continue with the PCB today, add the 15V booster, start work on output stuff like that.</p>
+
+<p>For the 15V booster, I'm gonna use the TPS65130 which can produce both positive and negative voltage and the ratings I want. It's also the IC used for 15V and -8V in the example circuit so I know it works.</p>
+
+<p>I was so dialed I forgot to make little updates... whoops. Anyway, here's the +15V and new -8V regulator</p>
+
+![image](https://github.com/user-attachments/assets/f053ee2f-df33-46a7-8a97-e121b9a705ab)
+
+<p>Previously I was trying to seperate signal and power ground, but someone on #electronics said I should be fine to just have a large ground plane and distance my noisier packages so I'm going to do that. Unfortunatly that's all I have time for today.</p>
+
+> Time taken: **54m**
+> - Wired up a pretty complex power regulator
+> - Changed things from seperate sig/pwr gnd to one gnd plane
 
 
 
