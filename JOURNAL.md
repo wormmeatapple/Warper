@@ -197,6 +197,20 @@
 > - Wired up a pretty complex power regulator
 > - Changed things from seperate sig/pwr gnd to one gnd plane
 
+![image](https://github.com/user-attachments/assets/7042b705-f7e8-4fa2-ad6a-f9c6108be777)
+
+<p>Finally finished wiring up the sensor. Really quickly added in the RG signal (just from the pico) and the power supplies. Now I needa turn the raw output of this sensor into digital images.</p>
+
+<p>First things first, the output needs to be amplified. Right now it's a couple millivolts worth of signal, we needa boost that</p>
+
+![image](https://github.com/user-attachments/assets/8f8c6760-6049-4330-953e-f303013d2194)
+
+<p>Ehhhhh?? I think this works? I'm not sure. Anyway, I spent a while researching the wiring for my output, but it's late so I'm gonna write all that up in the morning.</p>
+
+> Time take: **56m**
+> - Wired up an op-amp for the first time
+> - Ton of research on outputs of CCDs
+
 
 
 
