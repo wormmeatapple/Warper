@@ -1,3 +1,11 @@
+---
+title: "Warper"
+author: "wormmeatapple"
+description: "A CCD camera packed full of circuit bending opportunities!"
+created_at: "30th/5/2025"
+time taken: ? hours
+---
+
 ## May 30th
 
 <p>First things first is to start researching. My research into circuit bending led to an answer I really didn't like, no one knows how to predict it. You just mix, modify and disrupt data signals in the hopes it makes something cool. This is not ideal but it is fineee, because I know (slightly) how a camera sensor works.</p>
@@ -207,7 +215,7 @@
 
 <p>Ehhhhh?? I think this works? I'm not sure. Anyway, I spent a while researching the wiring for my output, but it's late so I'm gonna write all that up in the morning.</p>
 
-> Time take: **56m**
+> Time taken: **56m**
 > - Wired up an op-amp for the first time
 > - Ton of research on outputs of CCDs
 
@@ -222,7 +230,21 @@
 
 <br>
 
-<p>Now to convert analouge to digital, with an ADC! (you'll never guess what it stands for)</p>
+<p>I'm gonna add an amplifier with an adjustable potentiometer gain. This'll be good for tuning the signal voltage + for when it's time to circuit bend (nearly forgot that's the whole point of this!)</p>
+
+![image](https://github.com/user-attachments/assets/177bb313-7ab5-42a5-b3de-b5d93e200b66)
+
+<p>I'm gonna add a ton of these pots. and switches, but I want them on the external case, so I'll add little holes to wire them to the board.</p>
+
+<br>
+
+<p>Now to convert analogue to digital, with an ADC! (you'll never guess what it stands for)</p>
+
+<p>I'm gonna use the ADS8332, and all that's gonna do is turn the now amplified, filtered CCD signal and turn it into a SPI signal that the pico can read. Butttt that's all from me for today</p>
+
+> Time taken: **34 mins** cause im stupid
+> Added some noise filtering
+> Ability to increase the amplitude of our CCD signal
 
 
 
