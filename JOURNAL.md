@@ -2,7 +2,7 @@
 title: "Warper"
 author: "wormmeatapple"
 description: "A CCD camera packed full of circuit bending opportunities!"
-created_at: "30th/5/2025"
+created_at: "30/5/2025"
 time taken: ? hours
 ---
 
@@ -246,6 +246,20 @@ time taken: ? hours
 > Added some noise filtering
 > Ability to increase the amplitude of our CCD signal
 
+## June 27th
+<p>I want to add the ADC and the screen today, maybe the SD slot if I get time.</p>
+
+![image](https://github.com/user-attachments/assets/94986a3b-9f27-40cd-992e-5bd3e04c7c7d)
+
+<p>Working on the reference driver for the ADC.</p>
+
+![image](https://github.com/user-attachments/assets/1f75fe3c-db08-4d6a-937e-b4aaa9d38b81)
+
+<p>Flagged everything out. All the flags (that aren't REF or VCC) are driven by the pico. I really know know what else I need to add to this, but it took a while of reading this one stupid documentation. I do needa add the grounds, but I just don't wanna have to split digital gnd and power gnd 😭 Anyway, didn't get to the screen or SD card slot, but those'll be easy adds for tommorow!</p>
+
+> Time taken: **40 mins**
+> Precision reference driver for ADC
+> ...ADC
 
 
 
