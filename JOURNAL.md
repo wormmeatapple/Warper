@@ -280,5 +280,36 @@ time taken: ? hours
 <p>I might put power stuff on a different board to reduce voltage swings and thus noise. But also then I'd have to buy a whole new 2 layer pcb hmmm. Anyway that's all for today.</p>
 
 > Time taken: **20 mins**
-> Screen + SD card
-> Figured out how to add connectors
+> - Screen + SD card
+> - Figured out how to add connectors
+
+
+## June 30th
+<p>I decided I will make a seperate daughterboard for power management. First things first I gotta move my current pwr management from the main board to the daughter board.</p>
+
+<p>Before I do that, for some reason my kicad schematic didn't save, so I'll quickly redo that.</p>
+
+<br>
+
+![image](https://github.com/user-attachments/assets/f8ee23fd-56ec-4483-a757-ffa802c12ad6)
+
+<p>So these pin headers will connect to the pwr board, easy as pie.</p>
+
+<br>
+
+<p>I have these TP4056 charger modules lying around, and they'll be perfect. I can solder a battery connector cable to the B+/B- holes and wire the OUT+/OUT- to all my pwr manage ICs. I'll just make a footprint of through holes so I can fix it to the board.</p>
+
+![image](https://github.com/user-attachments/assets/6028d901-75ad-401e-839f-bf18e3985e9e)
+
+<p>I can put a tiny piece of metal or wire or anything in these, and then solder the board to here easy as pie.</p>
+
+![image](https://github.com/user-attachments/assets/142652f2-3a8b-4563-8e3c-54c0ffa7a664)
+
+<p>Bob's your uncle, power management board! I honestly thought that'd take way longer, but the longest part was remembering how to make a footprint. Tommorow I'll route this, but for now that's all for today.</p>
+
+> Time taken: **50 mins**
+> - Pwr management board done
+> - Fixed a kicad glitch
+
+
+
