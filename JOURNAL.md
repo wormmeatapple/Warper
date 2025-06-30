@@ -261,7 +261,24 @@ time taken: ? hours
 > Precision reference driver for ADC
 > ...ADC
 
+## June 29th
+<p>Why add a screen and an SD card module, when I can add both at once! I found a 2.8 TFT SPI V1.2 (ILI9341) screen in my cupboard, and it's got serial screen and SD card capabilities. It also has touchscreen, but I'm just not gonna wire that up for this. <br> I'm also not gonna solder the pins of the screen directly to my board, rather I'll add in connector pins so I can be flexible in the distance between my screen and main pcb.</p>
+
+![image](https://github.com/user-attachments/assets/41822836-ca93-4bb6-88af-03caafa45258)
+
+<p>Will really quickly wire it up according to this pinout.</p>
 
 
+![image](https://github.com/user-attachments/assets/bb3ca47c-3482-4b4b-b41b-d0fd1aab2660)
 
+<p>Ended up having the perfect amount of GPIO pins (after moving around some allocations, I had blocked my SPI pins). LED and VCC are tied together because if the screen is on, I want the backlight on too. Also it saves GPIOs but that's neither here nor there.</p>
 
+<p>I just needa sort out power management and we're done!</p>
+
+<br>
+
+<p>I might put power stuff on a different board to reduce voltage swings and thus noise. But also then I'd have to buy a whole new 2 layer pcb hmmm. Anyway that's all for today.</p>
+
+> Time taken: **20 mins**
+> Screen + SD card
+> Figured out how to add connectors
